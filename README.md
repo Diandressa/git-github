@@ -158,5 +158,48 @@ Compartilhar só um trecho do projeto atravás de uma URL
 ir no site github -> `+ ▼` -> `<> New gist`
 Compatilha a linha de código deseja 
 
+## Gerar Chave SSH
+
+Configuração de segurança para permitir a pessoa específica, com a conta específica que foi vinculada no github, fazer os commits
+
+`git clone urlSSH` ou `git remote add origin urlSSH`
+
+>The authenticity of host 'github.com (20.201.28.151)' can't be established.   
+ED25519 key fingerprint is chaveSSHgeradanoterminal
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? 
+
+Yes
+
+> Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.      
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Não reconhece meu computador, preciso permitir o acesso na minha conta do github
+
+Ir na minha conta > setting > SSH and GPG keys > `New SSH Keys`
+
+Precisamos colocar a chave (key) no formulário.
+
+A chave foi passada no terminal.
+Podemos recupera-la em pasta do nosso usuário > .ssh (pasta oculta) > gerar no terminal o arquivo com o comando
+
+`ssh-keygen -t ed25519 -C "email@gmail.com"`
+
+Pergunta onde quero salvar o arquivo, posso dar um enter e ele salva default na pasta .ssh
+
+Pergunta se quero criar uma senha toda vez que sincronizar com o github, se eu dar entre não é criado uma senha
+
+Gera dois arquivos, um da chave privada e um da pública. Precisamos abrir a chave pública. Abrimos com o bloco de notas.
+
+Colocamos essa chave no formulário no github
+
+Pronto! ✅
+
+[Como gerar chave SSH](https://docs.github.com/pt/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
 ## Licença
 [![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE) 
